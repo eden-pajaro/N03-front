@@ -1,42 +1,38 @@
-Instructions to run:
+
+**Instructions to run:**
 
 First Setup:
-
-cd ~/Documents/GitHub/N03-front
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install numpy pandas scikit-learn matplotlib joblib
+Clone the repo and move to the project folder (like in the first command).
+Run the following commands to create a virtual environment and install dependencies.
+  cd ~/Documents/GitHub/N03-front
+  python3 -m venv .venv
+  source .venv/bin/activate
+  python -m pip install numpy pandas scikit-learn matplotlib joblib
 
 
 Run FRONT:
-
-cd defenses/front
-python main.py ../../data/checkpoint/cells/ -format .cell -c checkpoint
+  cd defenses/front
+  python main.py ../../data/checkpoint/cells/ -format .cell -c checkpoint
 
 
 Normalize:
-
-cd ../..
-python utils/overhead.py defenses/results/ranpad2_1105_1633/ -format .cell
-python utils/norm.py defenses/results/ranpad2_1105_1633/
+  cd ../..
+  python utils/overhead.py defenses/results/ranpad2_1105_1633/ -format .cell
+  python utils/norm.py defenses/results/ranpad2_1105_1633/
 
 Run CUMUL:
-
-cd attacks/cumul
-mkdir -p results
-python extract.py ../../data/checkpoint/cells/
-python extract.py ../../defenses/results/ranpad2_1105_1633_norm/
-python main.py results/cells.npy
-python main.py results/ranpad2_1105_1633_norm.npy
+  cd attacks/cumul
+  mkdir -p results
+  python extract.py ../../data/checkpoint/cells/
+  python extract.py ../../defenses/results/ranpad2_1105_1633_norm/
+  python main.py results/cells.npy
+  python main.py results/ranpad2_1105_1633_norm.npy
 
 Sanity Check:
-
-cd ../..
-head -20 data/checkpoint/cells/0-0.cell
-head -20 defenses/results/ranpad2_1105_1633/0-0.cell
-
-head -20 data/checkpoint/cells/0-0.cell
-head -20 defenses/results/ranpad2_1105_1633/0-0.cell
+  cd ../..
+  head -20 data/checkpoint/cells/0-0.cell
+  head -20 defenses/results/ranpad2_1105_1633/0-0.cell
+  
 
 Results of Sanity Check:
 
@@ -135,3 +131,12 @@ Second number: which way it went.
 -1 = website → your computer (e.g. the page’s content)
 
 888 = a fake packet FRONT added; real ones are only ever 1 or -1
+
+## Team Contributions
+
+| Team member | Bounded contribution | Work completed | Evidence to link |
+|---|---|---|---|
+| Eden Pajaro | Dataset preparation and documentation | Found the dataset, uploaded the checkpoint traces to `data/checkpoint/cells`, and organized the README | Dataset upload commit and README revision |
+| Riya Ramakrishnan | Code compatibility | Updated the code to use the checkpoint data paths and work with the newer Python environment. | Compatibility commit or pull request |
+| Reah Robinson | FRONT runs and results | Ran the FRONT defense several times and averaged the results across runs. | Individual run logs and the averaged results |
+
