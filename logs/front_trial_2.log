@@ -1,0 +1,10 @@
+2026-11-05 17:09:17,467 ranpad2      INFO     Namespace(p='/Users/rrobinson/Desktop/N03-front/data/checkpoint/cells/', format='.cell', section='checkpoint', log='stdout')
+client_min_dummy_pkt_num:1
+server_min_dummy_pkt_num:1
+client_dummy_pkt_num: 1100
+server_dummy_pkt_num: 1100
+max_wnd: 14.0
+min_wnd: 1.0
+start_padding_time: 0
+2026-11-05 17:09:17,468 ranpad2      INFO     Traces are dumped to /Users/rrobinson/Desktop/N03-front/defenses/results/ranpad2_1105_1709
+2026-11-05 17:09:19,579 ranpad2      INFO     Time: 2.111445903778076

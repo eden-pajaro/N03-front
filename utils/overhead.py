@@ -59,7 +59,7 @@ def calc_single_ovhd(t):
     TOTAL = size.count() - RPOV - MPOV
     return (RPOV, MPOV, TOTAL)
 def parallel(flist, n_jobs = 25):
-    pool = mp.Pool(n_jobs)
+    pool = mp.get_context("fork").Pool(n_jobs)
     ovhds  = pool.map(calc_single_ovhd, flist)    
     return ovhds
 

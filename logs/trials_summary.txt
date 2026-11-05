@@ -1,0 +1,4 @@
+Input traces: 1010 (expected 1010)
+undefended: n=3  kFP accuracy mean=0.9870  std=0.0000
+front: n=10  kFP accuracy mean=0.8969  std=0.0063
+front: overhead mean=0.3258  std=0.0043

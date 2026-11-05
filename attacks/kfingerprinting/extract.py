@@ -384,7 +384,7 @@ def read_conf(file):
     return dict(cf['default'])
 
 def parallel(flist,n_jobs = 20): 
-    pool = mp.Pool(n_jobs)
+    pool = mp.get_context("fork").Pool(n_jobs)
     data_dict = pool.map(extractfeature, flist)
     return data_dict
 

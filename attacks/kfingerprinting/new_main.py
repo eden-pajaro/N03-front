@@ -109,7 +109,7 @@ def parallel(train_leaf, test_leaf, y_train, K = 1, n_jobs = 10):
     train_leaves = [train_leaf]*len(test_leaf)
     y_train = [y_train]*len(test_leaf)
     Ks = [K] * len(test_leaf)
-    pool = mp.Pool(n_jobs)
+    pool = mp.get_context("fork").Pool(n_jobs)
     neighbors = pool.map(get_neighbor, zip(train_leaves, test_leaf, y_train,Ks))
     return np.array(neighbors)
 
