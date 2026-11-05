@@ -62,7 +62,7 @@ def normalize(fdir):
 	
 
 def parallel(flist, n_jobs = 20):
-    pool = mp.Pool(n_jobs)
+    pool = mp.get_context('fork').Pool(n_jobs)
     pool.map(normalize, flist)
 
 
