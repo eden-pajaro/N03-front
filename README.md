@@ -1,7 +1,8 @@
 # Project Midpoint
 **Course:** 424\
 **Team:** N03\
-**Members:** Reah Robinson, Riya Ramakrishnan, Eden Pajaro
+**Members:** Reah Robinson, Riya Ramakrishnan, Eden Pajaro\
+**Link to Midpoint Checkpoint Repo:** [https://github.com/eden-pajaro/N03-front/tree/checkpoint](https://github.com/eden-pajaro/N03-front/tree/checkpoint)
 
 ## Instructions to run:
 
