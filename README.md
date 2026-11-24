@@ -1,6 +1,6 @@
-# FRONT Experiments 1 and 2 (Eden Pajaro)
+# Experiments 1 and 2 (Eden Pajaro)
 
-**Team N03 · Website Fingerprinting**
+**Team N03: Website Fingerprinting**
 
 I tested how FRONT’s dummy-cell budget and timing affect website fingerprinting on recorded Tor visits. Lower k-fingerprinting (kFP) accuracy means the classifier correctly identifies fewer visits. Cell overhead is the percentage of extra traffic added by FRONT.
 
@@ -16,12 +16,12 @@ python experiments/front-sweeps/run_front_sweeps.py . sweep-results
 python experiments/front-sweeps/summarize_front_sweeps.py sweep-results
 ```
 
-The first script runs the undefended control and both FRONT sweeps. The second verifies the results and generates the summary CSV and plots. Both write to `sweep-results/`.
+The first script runs the undefended control and both FRONT sweeps. The second verifies the results and generates the summary CSV and plots. Both write to `sweep-results/`. Note that `sweep-results/` is not on this GitHub repo. I only saved it locally. The results are summarized in the CSVs in `experiments/front-sweeps`.
 
 ## Experimental Setup
 
 - **Data:** The runner processes all 1,010 checkpoint traces in `data/checkpoint/cells/` for overhead measurement. The classifier evaluates the 1,000 monitored visits from 10 sites.
-- **Control:** We ran kFP on the original traces without FRONT. Every condition uses the same ten stratified 90/10 train/test splits. kFP is trained separately for each condition and evaluated on its held-out traces.
+- **Control:** I ran kFP on the original traces without FRONT and confirmed that it matched our checkpoint baseline. Every condition uses the same ten stratified 90/10 train/test splits. kFP is trained separately for each condition and evaluated on its held-out traces.
 - **Repetitions:** Each FRONT setting uses three padding seeds (`301`, `302`, and `303`). Both experiments share the 1,100-cell, 1–14 s reference runs.
 - **Overhead:** To calculate, divide the total number of inserted cells by the total number of original cells and multiply by 100. Before feature extraction, normalize packet directions to `+1` and `-1` so kFP sees direction without the simulator’s dummy-cell markers.
 
@@ -58,4 +58,3 @@ The 1–24 s setting saved **5.5 percentage points of overhead** relative to the
 
 - [Summary CSV](experiments/front-sweeps/summary.csv) contains means and run ranges.
 - [Run-level CSV](experiments/front-sweeps/runs.csv) contains seeds, accuracy, and cell counts.
-- [Evidence ZIP](https://chatgpt.com/library?file_id=libfile_6fbf09e0bc00819185471d6ccdabf85a&account_id=personal) contains both plots, held-out predictions, and before/after trace samples.
