@@ -1,0 +1,5 @@
+limit_per_direction,max_wnd_s,accuracy_pct_mean,accuracy_pct_min,accuracy_pct_max,overhead_pct_mean,overhead_pct_min,overhead_pct_max,client_overhead_pct_mean,client_overhead_pct_min,client_overhead_pct_max,server_overhead_pct_mean,server_overhead_pct_min,server_overhead_pct_max,kept_pct_mean,kept_pct_min,kept_pct_max
+550,8,95.067,94.700,95.300,17.529,17.262,17.943,70.997,69.763,72.692,9.943,9.703,10.175,99.165,99.137,99.193
+550,24,93.667,93.200,94.400,13.502,13.317,13.830,54.769,53.235,55.546,7.647,7.374,7.912,76.381,75.996,76.732
+1650,8,90.500,89.300,91.800,52.338,51.728,52.839,211.991,206.955,217.205,29.687,29.520,29.836,99.289,99.202,99.367
+1650,24,85.233,84.800,85.800,40.640,40.165,41.299,165.788,161.341,171.051,22.884,22.789,22.973,77.095,76.594,77.666
